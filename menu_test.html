@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menu Test | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <link rel="stylesheet" href="state-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        /* HAMBURGER BUTTON */
+        .menu-trigger {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .menu-trigger span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: white;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* MENU OVERLAY - UPDATED TO BE MORE TRANSPARENT/GLASSMORHPIC */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.25);
+            /* More transparent */
+            backdrop-filter: blur(35px);
+            /* Stronger blur for "airy" feel */
+            -webkit-backdrop-filter: blur(35px);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .menu-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            text-align: center;
+        }
+
+        .menu-link {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            letter-spacing: -0.5px;
+        }
+
+        .menu-link:active {
+            color: var(--primary);
+            transform: scale(0.95);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ACTIVE STATE FOR ICON */
+        .menu-trigger.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-trigger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-trigger.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .demo-notice {
+            background: #e3f2fd;
+            color: #0d47a1;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px;
+            font-size: 14px;
+            border: 1px solid #bbdefb;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- OVERLAY MENU -->
+    <div class="menu-overlay" id="mobileMenu">
+        <div class="close-menu" id="closeBtn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </div>
+        <nav class="menu-content">
+            <!-- NEW LINKS ADDED -->
+            <a href="index.html" class="menu-link">States</a>
+            <a href="regions.html" class="menu-link">Regions</a>
+
+            <hr style="width: 40px; border: 0; border-top: 2px solid rgba(255,255,255,0.1); margin: 10px auto;">
+
+            <a href="about.html" class="menu-link">About Us</a>
+            <a href="contact.html" class="menu-link">Get in Touch</a>
+            <a href="privacy_policy.html" class="menu-link">Privacy Policy</a>
+
+            <div
+                style="margin-top: 40px; color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;">
+                Interactive US Map
+            </div>
+        </nav>
+    </div>
+
+    <header class="state-hero">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </a>
+
+        <!-- THE HAMBURGER TRIGGER -->
+        <div class="menu-trigger" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <img src="../Flags/Flag_of_the_USA.svg" alt="USA Flag" class="hero-flag">
+        <h1 class="hero-title">Menu Prototype v2</h1>
+        <span class="hero-subtitle">Transparent glass effect</span>
+    </header>
+
+    <main>
+        <div class="demo-notice">
+            <strong>Update Applied:</strong> The menu now features a highly transparent glass effect with an increased
+            blur radius.
+            <strong>States</strong> and <strong>Regions</strong> have been prioritized at the top.
+        </div>
+
+        <div class="section-card">
+            <h2 class="section-title">New Order</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                1. States<br>
+                2. Regions<br>
+                3. About Us<br>
+                4. Get in Touch<br>
+                5. Privacy Policy
+            </p>
+        </div>
+    </main>
+
+    <footer class="mobile-footer">
+        <p>Interactive us map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const menuOverlay = document.getElementById('mobileMenu');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        // GSAP Timeline
+        const menuTl = gsap.timeline({ paused: true });
+
+        menuTl.to(menuOverlay, {
+            duration: 0.5,
+            autoAlpha: 1,
+            pointerEvents: 'all',
+            ease: 'power4.inOut'
+        })
+            .to(menuLinks, {
+                duration: 0.5,
+                y: 0,
+                opacity: 1,
+                stagger: 0.08,
+                ease: 'back.out(1.4)'
+            }, "-=0.3");
+
+        menuBtn.addEventListener('click', () => {
+            menuTl.play();
+        });
+
+        closeBtn.addEventListener('click', () => {
+            menuTl.reverse();
+        });
+
+        // Close on link click
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.getAttribute('href') === '#') e.preventDefault();
+                menuTl.reverse();
+            });
+        });
+    </script>
+</body>
+
+</html>
