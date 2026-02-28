@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>New Hampshire | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <link rel="stylesheet" href="state-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="state-hero">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </a>
+        <img src="Flags/Flag_of_New_Hampshire.svg" alt="New Hampshire Flag" class="hero-flag">
+        <h1 class="hero-title">New Hampshire</h1>
+        <span class="hero-subtitle">The Granite State</span>
+    </header>
+
+    <!-- LIVE STATUS CARD -->
+    <div class="section-card status-card">
+        <div class="status-item">
+            <span class="status-label">Local Time</span>
+            <span class="status-value" id="time-display">--:-- --</span>
+        </div>
+        <div class="status-item" style="border-left: 1px solid #f0f0f0; padding-left: 20px;">
+            <span class="status-label">Concord</span>
+            <span class="status-value" id="weather-display">Loading...</span>
+        </div>
+    </div>
+
+    <main style="padding-top: 10px;">
+        <!-- QUICK STATS -->
+        <div class="section-card">
+            <h2 class="section-title">Quick Stats</h2>
+            <div class="stat-grid-mobile">
+                <div class="stat-item-mobile">
+                    <span class="label">Population</span>
+                    <span class="value">1.40M</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Rank</span>
+                    <span class="value">#41</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Joined</span>
+                    <span class="value">1788</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Area (mi²)</span>
+                    <span class="value">9.3k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section-card">
+            <h2 class="section-title">Overview</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                New Hampshire is defined by the majestic White Mountains and a historical commitment to personal
+                freedom.
+                From its role as the first-in-the-nation primary state to its thriving tech hubs in historic millyards,
+                it
+                perfectly blends colonial heritage with modern innovation.
+            </p>
+        </div>
+
+        <!-- HISTORICAL SIGNIFICANCE -->
+        <div class="section-card">
+            <h2 class="section-title">Historical Significance</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Ratifying the Constitution on June 21, 1788, as the 9th state, New Hampshire provided the crucial
+                final vote needed to establish the United States government, forever cementing its status as a
+                foundational pillar of the Republic.
+            </p>
+        </div>
+
+        <!-- TOP CITIES -->
+        <div class="section-card">
+            <h2 class="section-title">Top Cities & Hubs</h2>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">1</div>
+                <div class="city-text-mobile">
+                    <h4>Manchester</h4>
+                    <span class="city-pop">Population: ~115,000</span>
+                    <p>The largest city in the state, transformed from a historic textile giant into a premier center
+                        for high tech and healthcare.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">2</div>
+                <div class="city-text-mobile">
+                    <h4>Nashua</h4>
+                    <span class="city-pop">Population: ~91,000</span>
+                    <p>Twice named the 'Best Place to Live in America,' this southern city is a major retail hub with a
+                        strong electronics sector.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">3</div>
+                <div class="city-text-mobile">
+                    <h4>Concord</h4>
+                    <span class="city-pop">Population: ~44,000</span>
+                    <p>The state capital, known for its gold-domed State House and as a center for legal, political, and
+                        cultural activities.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">4</div>
+                <div class="city-text-mobile">
+                    <h4>Derry</h4>
+                    <span class="city-pop">Population: ~34,000</span>
+                    <p>A historic town in the Merrimack Valley, famous for its connections to nature through the home of
+                        poet Robert Frost.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">5</div>
+                <div class="city-text-mobile">
+                    <h4>Dover</h4>
+                    <span class="city-pop">Population: ~32,000</span>
+                    <p>The oldest permanent settlement in the state, today it is a fast-growing coastal city known for
+                        its historic riverfront mills.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANDMARKS & ECONOMY -->
+        <div class="section-card">
+            <h2 class="section-title">Key Landmarks & Economy</h2>
+            <div class="landmark-card-item">
+                <strong>Mount Washington:</strong>
+                <p>The highest peak in the Northeast, legendary for its record-breaking winds and breathtaking alpine
+                    vistas.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Lake Winnipesaukee:</strong>
+                <p>The state's largest body of water, offering a premier four-season destination for recreation and
+                    scenic boating.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Portsmouth Seacoast:</strong>
+                <p>A historic port city renowned for its charming colonial architecture, busy shipyard, and vibrant
+                    coastal culture.</p>
+            </div>
+        </div>
+
+        <!-- DID YOU KNOW -->
+        <div class="section-card">
+            <h2 class="section-title">Did You Know?</h2>
+            <ul style="padding-left: 20px; color: var(--text-dark); font-size: 14px; line-height: 1.7; margin:0;">
+                <li style="margin-bottom: 12px;">New Hampshire was the **first colony** to declare independence from
+                    Great Britain.</li>
+                <li style="margin-bottom: 12px;">The state has **no general sales tax** and no personal state income
+                    tax.</li>
+                <li>Mount Washington once recorded a **231 mph surface wind gust**, the fastest ever measured by humans
+                    at the time.</li>
+            </ul>
+        </div>
+
+        <!-- MAP & NEIGHBORS -->
+        <div class="section-card">
+            <h2 class="section-title">New Hampshire Map</h2>
+            <div class="map-box">
+                <img src="Maps/New_Hampshire.svg" alt="New Hampshire Map">
+                <div class="neighbor-tags">
+                    <a href="vermont.html" class="tag-mobile">Vermont</a>
+                    <a href="massachusetts.html" class="tag-mobile">Massachusetts</a>
+                    <a href="maine.html" class="tag-mobile">Maine</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEAL & MOTTO -->
+        <div class="section-card">
+            <h2 class="section-title">Seal & Motto</h2>
+            <div class="seal-row">
+                <img src="Seals/Seal_of_New_Hampshire.svg" alt="Seal of New Hampshire" class="seal-img-mobile">
+                <div class="motto-box">
+                    <div class="motto-text">"Live Free or Die"</div>
+                    <div class="motto-origin">Adopted 1945.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Demographics</h2>
+            <div class="chart-wrap">
+                <canvas id="demoChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Population Growth</h2>
+            <div class="chart-wrap">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mobile-footer">
+        <p>Interactive us map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>States</span>
+        </a>
+        <a href="../index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+            <span>Map</span>
+        </a>
+        <a href="../us-regions.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+            <span>Regions</span>
+        </a>
+    </nav>
+
+    <script id="state-data">
+        window.stateConfig = {
+            timezone: "America/New_York",
+            weatherQuery: "Concord,NH,US",
+            charts: {
+                growthChart: {
+                    type: 'line',
+                    data: {
+                        labels: ['1980', '1990', '2000', '2010', '2020'],
+                        datasets: [{
+                            label: 'Population (Millions)',
+                            data: [0.92, 1.10, 1.23, 1.31, 1.38],
+                            borderColor: '#0277BD',
+                            backgroundColor: 'rgba(2, 119, 189, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                },
+                demoChart: {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['White', 'Hispanic', 'Asian', 'Black', 'Other'],
+                        datasets: [{
+                            data: [89.1, 4.3, 3.0, 1.8, 1.8],
+                            backgroundColor: ['#90CAF9', '#BA68C8', '#FC8865', '#64B5F6', '#81C784'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { boxWidth: 10 } } }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="state-mobile-logic.js"></script>
+    <script src="../state_logic.js"></script>
+</body>
+
+</html>

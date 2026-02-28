@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>South Dakota | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <link rel="stylesheet" href="state-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="state-hero">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </a>
+        <img src="Flags/Flag_of_South_Dakota.svg" alt="South Dakota Flag" class="hero-flag">
+        <h1 class="hero-title">South Dakota</h1>
+        <span class="hero-subtitle">The Mount Rushmore State</span>
+    </header>
+
+    <!-- LIVE STATUS CARD -->
+    <div class="section-card status-card">
+        <div class="status-item">
+            <span class="status-label">Local Time</span>
+            <span class="status-value" id="time-display">--:-- --</span>
+        </div>
+        <div class="status-item" style="border-left: 1px solid #f0f0f0; padding-left: 20px;">
+            <span class="status-label">Pierre</span>
+            <span class="status-value" id="weather-display">Loading...</span>
+        </div>
+    </div>
+
+    <main style="padding-top: 10px;">
+        <!-- QUICK STATS -->
+        <div class="section-card">
+            <h2 class="section-title">Quick Stats</h2>
+            <div class="stat-grid-mobile">
+                <div class="stat-item-mobile">
+                    <span class="label">Population</span>
+                    <span class="value">0.9M</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Rank</span>
+                    <span class="value">#46</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Joined</span>
+                    <span class="value">1889</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Area (mi²)</span>
+                    <span class="value">77.1k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section-card">
+            <h2 class="section-title">Overview</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                South Dakota, the 'Mount Rushmore State,' is a majestic land of the Great Plains
+                and the rugged Black Hills. Known for its iconic national monuments, it offers
+                a rich blend of frontier spirit and breathtaking natural beauty.
+            </p>
+        </div>
+
+        <!-- HISTORICAL SIGNIFICANCE -->
+        <div class="section-card">
+            <h2 class="section-title">Historical Significance</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                South Dakota officially joined the Union on November 2, 1889, as the 40th state.
+                Its identity is rooted in the cultures of the Great Sioux Nation and the
+                transformative legacy of the Black Hills Gold Rush.
+            </p>
+        </div>
+
+        <!-- TOP CITIES -->
+        <div class="section-card">
+            <h2 class="section-title">Top Cities & Hubs</h2>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">1</div>
+                <div class="city-text-mobile">
+                    <h4>Sioux Falls</h4>
+                    <span class="city-pop">Population: ~195,000</span>
+                    <p>The state's largest city and a massive regional hub for finance and healthcare, famous for its
+                        namesake waterfalls on the Big Sioux River.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">2</div>
+                <div class="city-text-mobile">
+                    <h4>Rapid City</h4>
+                    <span class="city-pop">Population: ~75,000</span>
+                    <p>The 'Gateway to the Black Hills,' serving as the primary tourist and historical center for the
+                        western part of the state.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">3</div>
+                <div class="city-text-mobile">
+                    <h4>Aberdeen</h4>
+                    <span class="city-pop">Population: ~28,000</span>
+                    <p>A major agricultural and healthcare center in the northeast, home to Northern State University
+                        and a vibrant community spirit.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">4</div>
+                <div class="city-text-mobile">
+                    <h4>Brookings</h4>
+                    <span class="city-pop">Population: ~24,000</span>
+                    <p>Home to South Dakota State University and a flourishing center for research, engineering, and
+                        high-tech manufacturing.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">5</div>
+                <div class="city-text-mobile">
+                    <h4>Pierre</h4>
+                    <span class="city-pop">Population: ~14,000</span>
+                    <p>The state capital, situated on the Missouri River, known for its historic charm and its role as
+                        the seat of South Dakota's government.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANDMARKS & ECONOMY -->
+        <div class="section-card">
+            <h2 class="section-title">Key Landmarks & Economy</h2>
+            <div class="landmark-card-item">
+                <strong>Mount Rushmore:</strong>
+                <p>The colossal granite sculpture in the Black Hills that honors four legendary US presidents and
+                    American history.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Badlands National Park:</strong>
+                <p>A world-renowned landscape of eroded pinnacles and spires that contains one of the planet's richest
+                    fossil beds.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Crazy Horse Memorial:</strong>
+                <p>A massive under-construction mountain carving that pays tribute to the Lakota warrior and tribal
+                    heritage.</p>
+            </div>
+        </div>
+
+        <!-- DID YOU KNOW -->
+        <div class="section-card">
+            <h2 class="section-title">Did You Know?</h2>
+            <ul style="padding-left: 20px; color: var(--text-dark); font-size: 14px; line-height: 1.7; margin:0;">
+                <li style="margin-bottom: 12px;">The **Black Hills** are among the oldest geological formations in North
+                    America.</li>
+                <li style="margin-bottom: 12px;">The **Corn Palace** in Mitchell is the only palace of its kind,
+                    decorated with murals made of corn.</li>
+                <li>South Dakota has **more miles of shoreline** than Florida, thanks to the massive Oahe Dam and
+                    Missouri River.</li>
+            </ul>
+        </div>
+
+        <!-- MAP & NEIGHBORS -->
+        <div class="section-card">
+            <h2 class="section-title">South Dakota Map</h2>
+            <div class="map-box">
+                <img src="Maps/South_Dakota.svg" alt="South Dakota Map">
+                <div class="neighbor-tags">
+                    <a href="northdakota.html" class="tag-mobile">North Dakota</a>
+                    <a href="minnesota.html" class="tag-mobile">Minnesota</a>
+                    <a href="iowa.html" class="tag-mobile">Iowa</a>
+                    <a href="nebraska.html" class="tag-mobile">Nebraska</a>
+                    <a href="wyoming.html" class="tag-mobile">Wyoming</a>
+                    <a href="montana.html" class="tag-mobile">Montana</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEAL & MOTTO -->
+        <div class="section-card">
+            <h2 class="section-title">Seal & Motto</h2>
+            <div class="seal-row">
+                <img src="Seals/Seal_of_South_Dakota.svg" alt="Seal of South Dakota" class="seal-img-mobile">
+                <div class="motto-box">
+                    <div class="motto-text">"Under God..."</div>
+                    <div class="motto-origin">"Under God, the People Rule"<br>Adopted 1889.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Demographics</h2>
+            <div class="chart-wrap">
+                <canvas id="demoChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Population Growth</h2>
+            <div class="chart-wrap">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mobile-footer">
+        <p>Interactive us map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>States</span>
+        </a>
+        <a href="../index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+            <span>Map</span>
+        </a>
+        <a href="../us-regions.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+            <span>Regions</span>
+        </a>
+    </nav>
+
+    <script id="state-data">
+        window.stateConfig = {
+            timezone: "America/Chicago",
+            weatherQuery: "Pierre,SD,US",
+            charts: {
+                growthChart: {
+                    type: 'line',
+                    data: {
+                        labels: ['1980', '1990', '2000', '2010', '2020'],
+                        datasets: [{
+                            label: 'Population (Millions)',
+                            data: [0.67, 0.70, 0.75, 0.81, 0.89],
+                            borderColor: '#0277BD',
+                            backgroundColor: 'rgba(2, 119, 189, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                },
+                demoChart: {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['White', 'Native Am.', 'Hispanic', 'Black', 'Other'],
+                        datasets: [{
+                            data: [84.6, 8.5, 4.4, 1.5, 1.0],
+                            backgroundColor: ['#90CAF9', '#BA68C8', '#FC8865', '#64B5F6', '#81C784'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { boxWidth: 10 } } }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="state-mobile-logic.js"></script>
+    <script src="../state_logic.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,506 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>USA Interactive | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- SEARCH BAR (STICKY) -->
+    <header class="mobile-header">
+        <div class="search-container">
+            <input type="text" id="state-search" placeholder="Search states, capitals, regions..." autocomplete="off">
+            <svg class="search-icon" viewBox="0 0 24 24">
+                <path
+                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </svg>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="hero-mini">
+            <h1>United States</h1>
+            <p>Select a state to explore real-time stats, weather, and maps.</p>
+        </section>
+
+        <!-- STATE GRID -->
+        <div class="state-grid" id="state-container">
+            <a href="alabama.html" class="state-card" data-state="Alabama">
+                <div class="card-flag"><img src="Flags/Flag_of_Alabama.svg" alt="Alabama"></div>
+                <div class="card-info">
+                    <h3>Alabama</h3>
+                    <span class="capital">Montgomery</span>
+                </div>
+                <div class="card-pop">5.0M</div>
+            </a>
+            <a href="alaska.html" class="state-card" data-state="Alaska">
+                <div class="card-flag"><img src="Flags/Flag_of_Alaska.svg" alt="Alaska"></div>
+                <div class="card-info">
+                    <h3>Alaska</h3>
+                    <span class="capital">Juneau</span>
+                </div>
+                <div class="card-pop">0.7M</div>
+            </a>
+            <a href="arizona.html" class="state-card" data-state="Arizona">
+                <div class="card-flag"><img src="Flags/Flag_of_Arizona.svg" alt="Arizona"></div>
+                <div class="card-info">
+                    <h3>Arizona</h3>
+                    <span class="capital">Phoenix</span>
+                </div>
+                <div class="card-pop">7.1M</div>
+            </a>
+            <a href="arkansas.html" class="state-card" data-state="Arkansas">
+                <div class="card-flag"><img src="Flags/Flag_of_Arkansas.svg" alt="Arkansas"></div>
+                <div class="card-info">
+                    <h3>Arkansas</h3>
+                    <span class="capital">Little Rock</span>
+                </div>
+                <div class="card-pop">3.0M</div>
+            </a>
+            <a href="california.html" class="state-card" data-state="California">
+                <div class="card-flag"><img src="Flags/Flag_of_California.svg" alt="California"></div>
+                <div class="card-info">
+                    <h3>California</h3>
+                    <span class="capital">Sacramento</span>
+                </div>
+                <div class="card-pop">39.2M</div>
+            </a>
+            <a href="colorado.html" class="state-card" data-state="Colorado">
+                <div class="card-flag"><img src="Flags/Flag_of_Colorado.svg" alt="Colorado"></div>
+                <div class="card-info">
+                    <h3>Colorado</h3>
+                    <span class="capital">Denver</span>
+                </div>
+                <div class="card-pop">5.7M</div>
+            </a>
+            <a href="connecticut.html" class="state-card" data-state="Connecticut">
+                <div class="card-flag"><img src="Flags/Flag_of_Connecticut.svg" alt="Connecticut"></div>
+                <div class="card-info">
+                    <h3>Connecticut</h3>
+                    <span class="capital">Hartford</span>
+                </div>
+                <div class="card-pop">3.6M</div>
+            </a>
+            <a href="delaware.html" class="state-card" data-state="Delaware">
+                <div class="card-flag"><img src="Flags/Flag_of_Delaware.svg" alt="Delaware"></div>
+                <div class="card-info">
+                    <h3>Delaware</h3>
+                    <span class="capital">Dover</span>
+                </div>
+                <div class="card-pop">0.9M</div>
+            </a>
+            <a href="florida.html" class="state-card" data-state="Florida">
+                <div class="card-flag"><img src="Flags/Flag_of_Florida.svg" alt="Florida"></div>
+                <div class="card-info">
+                    <h3>Florida</h3>
+                    <span class="capital">Tallahassee</span>
+                </div>
+                <div class="card-pop">21.5M</div>
+            </a>
+            <a href="georgia.html" class="state-card" data-state="Georgia">
+                <div class="card-flag"><img src="Flags/Flag_of_Georgia.svg" alt="Georgia"></div>
+                <div class="card-info">
+                    <h3>Georgia</h3>
+                    <span class="capital">Atlanta</span>
+                </div>
+                <div class="card-pop">10.7M</div>
+            </a>
+            <a href="hawaii.html" class="state-card" data-state="Hawaii">
+                <div class="card-flag"><img src="Flags/Flag_of_Hawaii.svg" alt="Hawaii"></div>
+                <div class="card-info">
+                    <h3>Hawaii</h3>
+                    <span class="capital">Honolulu</span>
+                </div>
+                <div class="card-pop">1.4M</div>
+            </a>
+            <a href="idaho.html" class="state-card" data-state="Idaho">
+                <div class="card-flag"><img src="Flags/Flag_of_Idaho.svg" alt="Idaho"></div>
+                <div class="card-info">
+                    <h3>Idaho</h3>
+                    <span class="capital">Boise</span>
+                </div>
+                <div class="card-pop">1.8M</div>
+            </a>
+            <a href="illinois.html" class="state-card" data-state="Illinois">
+                <div class="card-flag"><img src="Flags/Flag_of_Illinois.svg" alt="Illinois"></div>
+                <div class="card-info">
+                    <h3>Illinois</h3>
+                    <span class="capital">Springfield</span>
+                </div>
+                <div class="card-pop">12.8M</div>
+            </a>
+            <a href="indiana.html" class="state-card" data-state="Indiana">
+                <div class="card-flag"><img src="Flags/Flag_of_Indiana.svg" alt="Indiana"></div>
+                <div class="card-info">
+                    <h3>Indiana</h3>
+                    <span class="capital">Indianapolis</span>
+                </div>
+                <div class="card-pop">6.7M</div>
+            </a>
+            <a href="iowa.html" class="state-card" data-state="Iowa">
+                <div class="card-flag"><img src="Flags/Flag_of_Iowa.svg" alt="Iowa"></div>
+                <div class="card-info">
+                    <h3>Iowa</h3>
+                    <span class="capital">Des Moines</span>
+                </div>
+                <div class="card-pop">3.2M</div>
+            </a>
+            <a href="kansas.html" class="state-card" data-state="Kansas">
+                <div class="card-flag"><img src="Flags/Flag_of_Kansas.svg" alt="Kansas"></div>
+                <div class="card-info">
+                    <h3>Kansas</h3>
+                    <span class="capital">Topeka</span>
+                </div>
+                <div class="card-pop">2.9M</div>
+            </a>
+            <a href="kentucky.html" class="state-card" data-state="Kentucky">
+                <div class="card-flag"><img src="Flags/Flag_of_Kentucky.svg" alt="Kentucky"></div>
+                <div class="card-info">
+                    <h3>Kentucky</h3>
+                    <span class="capital">Frankfort</span>
+                </div>
+                <div class="card-pop">4.5M</div>
+            </a>
+            <a href="louisiana.html" class="state-card" data-state="Louisiana">
+                <div class="card-flag"><img src="Flags/Flag_of_Louisiana.svg" alt="Louisiana"></div>
+                <div class="card-info">
+                    <h3>Louisiana</h3>
+                    <span class="capital">Baton Rouge</span>
+                </div>
+                <div class="card-pop">4.6M</div>
+            </a>
+            <a href="maine.html" class="state-card" data-state="Maine">
+                <div class="card-flag"><img src="Flags/Flag_of_Maine.svg" alt="Maine"></div>
+                <div class="card-info">
+                    <h3>Maine</h3>
+                    <span class="capital">Augusta</span>
+                </div>
+                <div class="card-pop">1.3M</div>
+            </a>
+            <a href="maryland.html" class="state-card" data-state="Maryland">
+                <div class="card-flag"><img src="Flags/Flag_of_Maryland.svg" alt="Maryland"></div>
+                <div class="card-info">
+                    <h3>Maryland</h3>
+                    <span class="capital">Annapolis</span>
+                </div>
+                <div class="card-pop">6.1M</div>
+            </a>
+            <a href="massachusetts.html" class="state-card" data-state="Massachusetts">
+                <div class="card-flag"><img src="Flags/Flag_of_Massachusetts.svg" alt="Massachusetts"></div>
+                <div class="card-info">
+                    <h3>Massachusetts</h3>
+                    <span class="capital">Boston</span>
+                </div>
+                <div class="card-pop">7.0M</div>
+            </a>
+            <a href="michigan.html" class="state-card" data-state="Michigan">
+                <div class="card-flag"><img src="Flags/Flag_of_Michigan.svg" alt="Michigan"></div>
+                <div class="card-info">
+                    <h3>Michigan</h3>
+                    <span class="capital">Lansing</span>
+                </div>
+                <div class="card-pop">10.0M</div>
+            </a>
+            <a href="minnesota.html" class="state-card" data-state="Minnesota">
+                <div class="card-flag"><img src="Flags/Flag_of_Minnesota.svg" alt="Minnesota"></div>
+                <div class="card-info">
+                    <h3>Minnesota</h3>
+                    <span class="capital">St. Paul</span>
+                </div>
+                <div class="card-pop">5.7M</div>
+            </a>
+            <a href="mississippi.html" class="state-card" data-state="Mississippi">
+                <div class="card-flag"><img src="Flags/Flag_of_Mississippi.svg" alt="Mississippi"></div>
+                <div class="card-info">
+                    <h3>Mississippi</h3>
+                    <span class="capital">Jackson</span>
+                </div>
+                <div class="card-pop">2.9M</div>
+            </a>
+            <a href="missouri.html" class="state-card" data-state="Missouri">
+                <div class="card-flag"><img src="Flags/Flag_of_Missouri.svg" alt="Missouri"></div>
+                <div class="card-info">
+                    <h3>Missouri</h3>
+                    <span class="capital">Jefferson City</span>
+                </div>
+                <div class="card-pop">6.1M</div>
+            </a>
+            <a href="montana.html" class="state-card" data-state="Montana">
+                <div class="card-flag"><img src="Flags/Flag_of_Montana.svg" alt="Montana"></div>
+                <div class="card-info">
+                    <h3>Montana</h3>
+                    <span class="capital">Helena</span>
+                </div>
+                <div class="card-pop">1.1M</div>
+            </a>
+            <a href="nebraska.html" class="state-card" data-state="Nebraska">
+                <div class="card-flag"><img src="Flags/Flag_of_Nebraska.svg" alt="Nebraska"></div>
+                <div class="card-info">
+                    <h3>Nebraska</h3>
+                    <span class="capital">Lincoln</span>
+                </div>
+                <div class="card-pop">1.9M</div>
+            </a>
+            <a href="nevada.html" class="state-card" data-state="Nevada">
+                <div class="card-flag"><img src="Flags/Flag_of_Nevada.svg" alt="Nevada"></div>
+                <div class="card-info">
+                    <h3>Nevada</h3>
+                    <span class="capital">Carson City</span>
+                </div>
+                <div class="card-pop">3.1M</div>
+            </a>
+            <a href="newhampshire.html" class="state-card" data-state="New Hampshire">
+                <div class="card-flag"><img src="Flags/Flag_of_New_Hampshire.svg" alt="New Hampshire"></div>
+                <div class="card-info">
+                    <h3>New Hampshire</h3>
+                    <span class="capital">Concord</span>
+                </div>
+                <div class="card-pop">1.4M</div>
+            </a>
+            <a href="newjersey.html" class="state-card" data-state="New Jersey">
+                <div class="card-flag"><img src="Flags/Flag_of_New_Jersey.svg" alt="New Jersey"></div>
+                <div class="card-info">
+                    <h3>New Jersey</h3>
+                    <span class="capital">Trenton</span>
+                </div>
+                <div class="card-pop">9.3M</div>
+            </a>
+            <a href="newmexico.html" class="state-card" data-state="New Mexico">
+                <div class="card-flag"><img src="Flags/Flag_of_New_Mexico.svg" alt="New Mexico"></div>
+                <div class="card-info">
+                    <h3>New Mexico</h3>
+                    <span class="capital">Santa Fe</span>
+                </div>
+                <div class="card-pop">2.1M</div>
+            </a>
+            <a href="newyork.html" class="state-card" data-state="New York">
+                <div class="card-flag"><img src="Flags/Flag_of_New_York.svg" alt="New York"></div>
+                <div class="card-info">
+                    <h3>New York</h3>
+                    <span class="capital">Albany</span>
+                </div>
+                <div class="card-pop">20.2M</div>
+            </a>
+            <a href="northcarolina.html" class="state-card" data-state="North Carolina">
+                <div class="card-flag"><img src="Flags/Flag_of_North_Carolina.svg" alt="North Carolina"></div>
+                <div class="card-info">
+                    <h3>North Carolina</h3>
+                    <span class="capital">Raleigh</span>
+                </div>
+                <div class="card-pop">10.8M</div>
+            </a>
+            <a href="northdakota.html" class="state-card" data-state="North Dakota">
+                <div class="card-flag"><img src="Flags/Flag_of_North_Dakota.svg" alt="North Dakota"></div>
+                <div class="card-info">
+                    <h3>North Dakota</h3>
+                    <span class="capital">Bismarck</span>
+                </div>
+                <div class="card-pop">0.7M</div>
+            </a>
+            <a href="ohio.html" class="state-card" data-state="Ohio">
+                <div class="card-flag"><img src="Flags/Flag_of_Ohio.svg" alt="Ohio"></div>
+                <div class="card-info">
+                    <h3>Ohio</h3>
+                    <span class="capital">Columbus</span>
+                </div>
+                <div class="card-pop">11.8M</div>
+            </a>
+            <a href="oklahoma.html" class="state-card" data-state="Oklahoma">
+                <div class="card-flag"><img src="Flags/Flag_of_Oklahoma.svg" alt="Oklahoma"></div>
+                <div class="card-info">
+                    <h3>Oklahoma</h3>
+                    <span class="capital">Oklahoma City</span>
+                </div>
+                <div class="card-pop">4.0M</div>
+            </a>
+            <a href="oregon.html" class="state-card" data-state="Oregon">
+                <div class="card-flag"><img src="Flags/Flag_of_Oregon.svg" alt="Oregon"></div>
+                <div class="card-info">
+                    <h3>Oregon</h3>
+                    <span class="capital">Salem</span>
+                </div>
+                <div class="card-pop">4.2M</div>
+            </a>
+            <a href="pennsylvania.html" class="state-card" data-state="Pennsylvania">
+                <div class="card-flag"><img src="Flags/Flag_of_Pennsylvania.svg" alt="Pennsylvania"></div>
+                <div class="card-info">
+                    <h3>Pennsylvania</h3>
+                    <span class="capital">Harrisburg</span>
+                </div>
+                <div class="card-pop">13.0M</div>
+            </a>
+            <a href="rhodeisland.html" class="state-card" data-state="Rhode Island">
+                <div class="card-flag"><img src="Flags/Flag_of_Rhode_Island.svg" alt="Rhode Island"></div>
+                <div class="card-info">
+                    <h3>Rhode Island</h3>
+                    <span class="capital">Providence</span>
+                </div>
+                <div class="card-pop">1.1M</div>
+            </a>
+            <a href="southcarolina.html" class="state-card" data-state="South Carolina">
+                <div class="card-flag"><img src="Flags/Flag_of_South_Carolina.svg" alt="South Carolina"></div>
+                <div class="card-info">
+                    <h3>South Carolina</h3>
+                    <span class="capital">Columbia</span>
+                </div>
+                <div class="card-pop">5.1M</div>
+            </a>
+            <a href="southdakota.html" class="state-card" data-state="South Dakota">
+                <div class="card-flag"><img src="Flags/Flag_of_South_Dakota.svg" alt="South Dakota"></div>
+                <div class="card-info">
+                    <h3>South Dakota</h3>
+                    <span class="capital">Pierre</span>
+                </div>
+                <div class="card-pop">0.8M</div>
+            </a>
+            <a href="tennessee.html" class="state-card" data-state="Tennessee">
+                <div class="card-flag"><img src="Flags/Flag_of_Tennessee.svg" alt="Tennessee"></div>
+                <div class="card-info">
+                    <h3>Tennessee</h3>
+                    <span class="capital">Nashville</span>
+                </div>
+                <div class="card-pop">6.9M</div>
+            </a>
+            <a href="texas.html" class="state-card" data-state="Texas">
+                <div class="card-flag"><img src="Flags/Flag_of_Texas.svg" alt="Texas"></div>
+                <div class="card-info">
+                    <h3>Texas</h3>
+                    <span class="capital">Austin</span>
+                </div>
+                <div class="card-pop">29.1M</div>
+            </a>
+            <a href="utah.html" class="state-card" data-state="Utah">
+                <div class="card-flag"><img src="Flags/Flag_of_Utah.svg" alt="Utah"></div>
+                <div class="card-info">
+                    <h3>Utah</h3>
+                    <span class="capital">Salt Lake City</span>
+                </div>
+                <div class="card-pop">3.2M</div>
+            </a>
+            <a href="vermont.html" class="state-card" data-state="Vermont">
+                <div class="card-flag"><img src="Flags/Flag_of_Vermont.svg" alt="Vermont"></div>
+                <div class="card-info">
+                    <h3>Vermont</h3>
+                    <span class="capital">Montpelier</span>
+                </div>
+                <div class="card-pop">0.6M</div>
+            </a>
+            <a href="virginia.html" class="state-card" data-state="Virginia">
+                <div class="card-flag"><img src="Flags/Flag_of_Virginia.svg" alt="Virginia"></div>
+                <div class="card-info">
+                    <h3>Virginia</h3>
+                    <span class="capital">Richmond</span>
+                </div>
+                <div class="card-pop">8.6M</div>
+            </a>
+            <a href="washington.html" class="state-card" data-state="Washington">
+                <div class="card-flag"><img src="Flags/Flag_of_Washington.svg" alt="Washington"></div>
+                <div class="card-info">
+                    <h3>Washington</h3>
+                    <span class="capital">Olympia</span>
+                </div>
+                <div class="card-pop">7.7M</div>
+            </a>
+            <a href="westvirginia.html" class="state-card" data-state="West Virginia">
+                <div class="card-flag"><img src="Flags/Flag_of_West_Virginia.svg" alt="West Virginia"></div>
+                <div class="card-info">
+                    <h3>West Virginia</h3>
+                    <span class="capital">Charleston</span>
+                </div>
+                <div class="card-pop">1.7M</div>
+            </a>
+            <a href="wisconsin.html" class="state-card" data-state="Wisconsin">
+                <div class="card-flag"><img src="Flags/Flag_of_Wisconsin.svg" alt="Wisconsin"></div>
+                <div class="card-info">
+                    <h3>Wisconsin</h3>
+                    <span class="capital">Madison</span>
+                </div>
+                <div class="card-pop">5.8M</div>
+            </a>
+            <a href="wyoming.html" class="state-card" data-state="Wyoming">
+                <div class="card-flag"><img src="Flags/Flag_of_Wyoming.svg" alt="Wyoming"></div>
+                <div class="card-info">
+                    <h3>Wyoming</h3>
+                    <span class="capital">Cheyenne</span>
+                </div>
+                <div class="card-pop">0.5M</div>
+            </a>
+            <a href="districtofcolumbia.html" class="state-card" data-state="District of Columbia">
+                <div class="card-flag"><img src="Flags/Flag_of_the_District_of_Columbia.svg"
+                        alt="District of Columbia"></div>
+                <div class="card-info">
+                    <h3>District of Columbia</h3>
+                    <span class="capital">Washington</span>
+                </div>
+                <div class="card-pop">0.7M</div>
+            </a><!-- Placeholder for more states -->
+            <div class="more-indicator">Scroll for all 50 states</div>
+        </div>
+    </main>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>Home</span>
+        </a>
+        <a href="../index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+            <span>Map</span>
+        </a>
+        <a href="../us-regions.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+            <span>Regions</span>
+        </a>
+    </nav>
+
+    <footer class="mobile-footer">
+        <p>Interactive US Map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        // Simple Search Filter
+        const searchInput = document.getElementById('state-search');
+        const cards = document.querySelectorAll('.state-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            cards.forEach(card => {
+                const name = card.getAttribute('data-state').toLowerCase();
+                if (name.includes(term)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Entry Animations
+        gsap.from(".state-card", {
+            duration: 0.6,
+            y: 30,
+            opacity: 0,
+            stagger: 0.1,
+            ease: "power2.out"
+        });
+    </script>
+</body>
+
+</html>
