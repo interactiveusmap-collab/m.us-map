@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>New Mexico | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <link rel="stylesheet" href="state-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="state-hero">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </a>
+        <img src="Flags/Flag_of_New_Mexico.svg" alt="New Mexico Flag" class="hero-flag">
+        <h1 class="hero-title">New Mexico</h1>
+        <span class="hero-subtitle">The Land of Enchantment</span>
+    </header>
+
+    <!-- LIVE STATUS CARD -->
+    <div class="section-card status-card">
+        <div class="status-item">
+            <span class="status-label">Local Time</span>
+            <span class="status-value" id="time-display">--:-- --</span>
+        </div>
+        <div class="status-item" style="border-left: 1px solid #f0f0f0; padding-left: 20px;">
+            <span class="status-label">Santa Fe</span>
+            <span class="status-value" id="weather-display">Loading...</span>
+        </div>
+    </div>
+
+    <main style="padding-top: 10px;">
+        <!-- QUICK STATS -->
+        <div class="section-card">
+            <h2 class="section-title">Quick Stats</h2>
+            <div class="stat-grid-mobile">
+                <div class="stat-item-mobile">
+                    <span class="label">Population</span>
+                    <span class="value">2.12M</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Rank</span>
+                    <span class="value">#36</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Joined</span>
+                    <span class="value">1912</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Area (mi²)</span>
+                    <span class="value">121k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section-card">
+            <h2 class="section-title">Overview</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                New Mexico, the 'Land of Enchantment,' is a breathtaking high desert sanctuary. Its vibrant Pueblo and
+                Hispanic fusion defines its unique adobe architecture and artistic innovation, making it one of the
+                most culturally rich regions in the nation.
+            </p>
+        </div>
+
+        <!-- HISTORICAL SIGNIFICANCE -->
+        <div class="section-card">
+            <h2 class="section-title">Historical Significance</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Becoming the 47th state on January 6, 1912, New Mexico finalized the boundaries of the American
+                Southwest, integrating a land renowned for its ancient indigenous heritage and modern scientific
+                research.
+            </p>
+        </div>
+
+        <!-- TOP CITIES -->
+        <div class="section-card">
+            <h2 class="section-title">Top Cities & Hubs</h2>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">1</div>
+                <div class="city-text-mobile">
+                    <h4>Albuquerque</h4>
+                    <span class="city-pop">Population: ~560,000</span>
+                    <p>The state's largest city, globally recognized for its spectacular International Balloon Fiesta
+                        and as a primary high-tech research hub.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">2</div>
+                <div class="city-text-mobile">
+                    <h4>Las Cruces</h4>
+                    <span class="city-pop">Population: ~111,000</span>
+                    <p>The cultural and economic heart of the Mesilla Valley, serving as a major center for agriculture
+                        and space exploration transit.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">3</div>
+                <div class="city-text-mobile">
+                    <h4>Rio Rancho</h4>
+                    <span class="city-pop">Population: ~104,000</span>
+                    <p>One of the region's fastest-growing technology centers, acting as a crucial residential and
+                        industrial suburb of Albuquerque.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">4</div>
+                <div class="city-text-mobile">
+                    <h4>Santa Fe</h4>
+                    <span class="city-pop">Population: ~87,000</span>
+                    <p>The nation's oldest state capital, world-famous for its distinct Pueblo-style architecture and
+                        flourishing international arts scene.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">5</div>
+                <div class="city-text-mobile">
+                    <h4>Roswell</h4>
+                    <span class="city-pop">Population: ~48,000</span>
+                    <p>Famous worldwide for its connection to 1947 UFO lore, it is also a vital regional center for
+                        dairy production and agriculture.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANDMARKS & ECONOMY -->
+        <div class="section-card">
+            <h2 class="section-title">Key Landmarks & Economy</h2>
+            <div class="landmark-card-item">
+                <strong>White Sands:</strong>
+                <p>The world's largest gypsum dunefield, a mesmerizing national park of wave-like white sand dunes in
+                    the Tularosa Basin.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Carlsbad Caverns:</strong>
+                <p>A staggering underground wonder featuring more than 119 caves formed by sulfuric acid dissolving
+                    limestone.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Los Alamos Laboratory:</strong>
+                <p>A premier national institution for scientific innovation, famously serving as the birthplace of the
+                    Manhattan Project.</p>
+            </div>
+        </div>
+
+        <!-- DID YOU KNOW -->
+        <div class="section-card">
+            <h2 class="section-title">Did You Know?</h2>
+            <ul style="padding-left: 20px; color: var(--text-dark); font-size: 14px; line-height: 1.7; margin:0;">
+                <li style="margin-bottom: 12px;">The state's official question is **'Red or Green?'**, referring to your
+                    choice of chili sauce.</li>
+                <li style="margin-bottom: 12px;">Santa Fe is the **highest capital city** in the US, sitting at 7,199
+                    feet above sea level.</li>
+                <li>New Mexico has more **Ph.D.s per capita** than any other state due to its numerous national
+                    laboratories.</li>
+            </ul>
+        </div>
+
+        <!-- MAP & NEIGHBORS -->
+        <div class="section-card">
+            <h2 class="section-title">New Mexico Map</h2>
+            <div class="map-box">
+                <img src="Maps/New_Mexico.svg" alt="New Mexico Map">
+                <div class="neighbor-tags">
+                    <a href="arizona.html" class="tag-mobile">Arizona</a>
+                    <a href="colorado.html" class="tag-mobile">Colorado</a>
+                    <a href="oklahoma.html" class="tag-mobile">Oklahoma</a>
+                    <a href="texas.html" class="tag-mobile">Texas</a>
+                    <a href="utah.html" class="tag-mobile">Utah</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEAL & MOTTO -->
+        <div class="section-card">
+            <h2 class="section-title">Seal & Motto</h2>
+            <div class="seal-row">
+                <img src="Seals/Seal_of_New_Mexico.svg" alt="Seal of New Mexico" class="seal-img-mobile">
+                <div class="motto-box">
+                    <div class="motto-text">"Crescit eundo"</div>
+                    <div class="motto-origin">"It grows as it goes"<br>Adopted 1887.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Demographics</h2>
+            <div class="chart-wrap">
+                <canvas id="demoChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Population Growth</h2>
+            <div class="chart-wrap">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mobile-footer">
+        <p>Interactive us map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>States</span>
+        </a>
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+            <span>Map</span>
+        </a>
+        <a href="regions.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+            <span>Regions</span>
+        </a>
+    </nav>
+
+    <script id="state-data">
+        window.stateConfig = {
+            timezone: "America/Denver",
+            weatherQuery: "Santa Fe,NM,US",
+            charts: {
+                growthChart: {
+                    type: 'line',
+                    data: {
+                        labels: ['1980', '1990', '2000', '2010', '2020'],
+                        datasets: [{
+                            label: 'Population (Millions)',
+                            data: [1.30, 1.51, 1.82, 2.06, 2.12],
+                            borderColor: '#0277BD',
+                            backgroundColor: 'rgba(2, 119, 189, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                },
+                demoChart: {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Hispanic', 'White', 'Native Am.', 'Black', 'Asian'],
+                        datasets: [{
+                            data: [47.7, 36.5, 9.1, 2.1, 1.7],
+                            backgroundColor: ['#90CAF9', '#BA68C8', '#FC8865', '#64B5F6', '#81C784'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { boxWidth: 10 } } }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="state-mobile-logic.js"></script>
+</body>
+
+</html>

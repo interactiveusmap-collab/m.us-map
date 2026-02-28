@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>West Virginia | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <link rel="stylesheet" href="state-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="state-hero">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </a>
+        <img src="Flags/Flag_of_West_Virginia.svg" alt="West Virginia Flag" class="hero-flag">
+        <h1 class="hero-title">West Virginia</h1>
+        <span class="hero-subtitle">The Mountain State</span>
+    </header>
+
+    <!-- LIVE STATUS CARD -->
+    <div class="section-card status-card">
+        <div class="status-item">
+            <span class="status-label">Local Time</span>
+            <span class="status-value" id="time-display">--:-- --</span>
+        </div>
+        <div class="status-item" style="border-left: 1px solid #f0f0f0; padding-left: 20px;">
+            <span class="status-label">Charleston</span>
+            <span class="status-value" id="weather-display">Loading...</span>
+        </div>
+    </div>
+
+    <main style="padding-top: 10px;">
+        <!-- QUICK STATS -->
+        <div class="section-card">
+            <h2 class="section-title">Quick Stats</h2>
+            <div class="stat-grid-mobile">
+                <div class="stat-item-mobile">
+                    <span class="label">Population</span>
+                    <span class="value">1.8M</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Rank</span>
+                    <span class="value">#39</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Joined</span>
+                    <span class="value">1863</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Area (mi²)</span>
+                    <span class="value">24.2k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section-card">
+            <h2 class="section-title">Overview</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                West Virginia is a ruggedly beautiful state situated entirely within the
+                Appalachian Range. Known as the 'Mountain State,' it is world-renowned for its
+                dramatically forested landscapes, deep coal mining heritage, and elite outdoor
+                sports like whitewater rafting and climbing.
+            </p>
+        </div>
+
+        <!-- HISTORICAL SIGNIFICANCE -->
+        <div class="section-card">
+            <h2 class="section-title">Historical Significance</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                West Virginia joined the Union on June 20, 1863, as the 35th state, becoming the
+                only state born from secession from a Confederate state during the Civil War.
+                Its history is intertwined with the American labor movement and the
+                industrial power of the coal industry.
+            </p>
+        </div>
+
+        <!-- TOP CITIES -->
+        <div class="section-card">
+            <h2 class="section-title">Top Cities & Hubs</h2>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">1</div>
+                <div class="city-text-mobile">
+                    <h4>Charleston</h4>
+                    <span class="city-pop">Population: ~48,000</span>
+                    <p>The state capital and commercial hub, beautifully located at the confluence of the Elk and
+                        Kanawha Rivers, serving as the heart of government and industry.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">2</div>
+                <div class="city-text-mobile">
+                    <h4>Huntington</h4>
+                    <span class="city-pop">Population: ~46,000</span>
+                    <p>A historic Ohio River port city and home to Marshall University, celebrated for its vibrant
+                        downtown and its role as a regional healthcare center.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">3</div>
+                <div class="city-text-mobile">
+                    <h4>Morgantown</h4>
+                    <span class="city-pop">Population: ~30,000</span>
+                    <p>Home to West Virginia University, this energetic college town is a primary driver of the state's
+                        technology, education, and research sectors.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">4</div>
+                <div class="city-text-mobile">
+                    <h4>Parkersburg</h4>
+                    <span class="city-pop">Population: ~29,000</span>
+                    <p>A historic river city with a deep oil and gas heritage, serving as a vital gateway to the state's
+                        northern chemical and manufacturing corridor.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">5</div>
+                <div class="city-text-mobile">
+                    <h4>Wheeling</h4>
+                    <span class="city-pop">Population: ~26,000</span>
+                    <p>The state's original capital, famous for its Victorian architecture and its legacy as a major
+                        transportation hub along the historic National Road.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANDMARKS & ECONOMY -->
+        <div class="section-card">
+            <h2 class="section-title">Key Landmarks & Economy</h2>
+            <div class="landmark-card-item">
+                <strong>New River Gorge:</strong>
+                <p>One of the newest US National Parks, featuring an iconic bridge and world-class whitewater rafting
+                    amidst spectacular Appalachian scenery.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>The Greenbrier:</strong>
+                <p>A legendary luxury resort that has hosted 28 US Presidents and famously concealed a secret Cold
+                    War-era Congressional fallout bunker.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Blue Ridge Mountains:</strong>
+                <p>Iconic mountain range providing the backdrop for the state's rugged identity and immortalized in the
+                    song 'Take Me Home, Country Roads.'</p>
+            </div>
+        </div>
+
+        <!-- DID YOU KNOW -->
+        <div class="section-card">
+            <h2 class="section-title">Did You Know?</h2>
+            <ul style="padding-left: 20px; color: var(--text-dark); font-size: 14px; line-height: 1.7; margin:0;">
+                <li style="margin-bottom: 12px;">West Virginia is the **only state positioned entirely within the
+                    Appalachian Mountains**.</li>
+                <li style="margin-bottom: 12px;">The **First Mother's Day** service was held in Grafton, West Virginia,
+                    at Andrews Methodist Church in 1908.</li>
+                <li>The **New River Gorge Bridge** was once the world's highest bridge and remains a global site for
+                    base jumping on Bridge Day.</li>
+            </ul>
+        </div>
+
+        <!-- MAP & NEIGHBORS -->
+        <div class="section-card">
+            <h2 class="section-title">West Virginia Map</h2>
+            <div class="map-box">
+                <img src="Maps/West_Virginia.svg" alt="West Virginia Map">
+                <div class="neighbor-tags">
+                    <a href="ohio.html" class="tag-mobile">Ohio</a>
+                    <a href="pennsylvania.html" class="tag-mobile">Pennsylvania</a>
+                    <a href="maryland.html" class="tag-mobile">Maryland</a>
+                    <a href="virginia.html" class="tag-mobile">Virginia</a>
+                    <a href="kentucky.html" class="tag-mobile">Kentucky</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEAL & MOTTO -->
+        <div class="section-card">
+            <h2 class="section-title">Seal & Motto</h2>
+            <div class="seal-row">
+                <img src="Seals/Seal_of_West_Virginia.svg" alt="Seal of West Virginia" class="seal-img-mobile">
+                <div class="motto-box">
+                    <div class="motto-text">"Montani Semper Liberi"</div>
+                    <div class="motto-origin">"Mountaineers are always free."<br>Adopted 1863.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Demographics</h2>
+            <div class="chart-wrap">
+                <canvas id="demoChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Population Growth</h2>
+            <div class="chart-wrap">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mobile-footer">
+        <p>Interactive us map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>States</span>
+        </a>
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+            <span>Map</span>
+        </a>
+        <a href="regions.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+            <span>Regions</span>
+        </a>
+    </nav>
+
+    <script id="state-data">
+        window.stateConfig = {
+            timezone: "America/New_York",
+            weatherQuery: "Charleston,WV,US",
+            charts: {
+                growthChart: {
+                    type: 'line',
+                    data: {
+                        labels: ['1980', '1990', '2000', '2010', '2020'],
+                        datasets: [{
+                            label: 'Population (Millions)',
+                            data: [1.95, 1.79, 1.81, 1.85, 1.79],
+                            borderColor: '#FFA000',
+                            backgroundColor: 'rgba(255, 160, 0, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                },
+                demoChart: {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['White', 'Black', 'Hispanic', 'Asian', 'Other'],
+                        datasets: [{
+                            data: [91.3, 3.6, 1.9, 0.8, 2.4],
+                            backgroundColor: ['#FFD54F', '#FC8865', '#BA68C8', '#64B5F6', '#81C784'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { boxWidth: 10 } } }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="state-mobile-logic.js"></script>
+</body>
+
+</html>

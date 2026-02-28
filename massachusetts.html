@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Massachusetts | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <link rel="stylesheet" href="state-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="state-hero">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </a>
+        <img src="Flags/Flag_of_Massachusetts.svg" alt="Massachusetts Flag" class="hero-flag">
+        <h1 class="hero-title">Massachusetts</h1>
+        <span class="hero-subtitle">The Bay State</span>
+    </header>
+
+    <!-- LIVE STATUS CARD -->
+    <div class="section-card status-card">
+        <div class="status-item">
+            <span class="status-label">Local Time</span>
+            <span class="status-value" id="time-display">--:-- --</span>
+        </div>
+        <div class="status-item" style="border-left: 1px solid #f0f0f0; padding-left: 20px;">
+            <span class="status-label">Boston</span>
+            <span class="status-value" id="weather-display">Loading...</span>
+        </div>
+    </div>
+
+    <main style="padding-top: 10px;">
+        <!-- QUICK STATS -->
+        <div class="section-card">
+            <h2 class="section-title">Quick Stats</h2>
+            <div class="stat-grid-mobile">
+                <div class="stat-item-mobile">
+                    <span class="label">Population</span>
+                    <span class="value">7.03M</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Rank</span>
+                    <span class="value">#15</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Joined</span>
+                    <span class="value">1788</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Area (mi²)</span>
+                    <span class="value">10.6k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section-card">
+            <h2 class="section-title">Overview</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Massachusetts, a cornerstone of history, innovation, and education. Home to prestigious Ivy League
+                universities and a
+                burgeoning biotech industry, it lead the way in science, medicine, and democratic progress for the
+                nation.
+            </p>
+        </div>
+
+        <!-- HISTORICAL SIGNIFICANCE -->
+        <div class="section-card">
+            <h2 class="section-title">Historical Significance</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Joined the Union on February 6, 1788, as the 6th state. It was the launching pad for the Revolutionary
+                War
+                and remains a global leader in intellectual pursuit and democratic character.
+            </p>
+        </div>
+
+        <!-- TOP CITIES -->
+        <div class="section-card">
+            <h2 class="section-title">Top Cities & Hubs</h2>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">1</div>
+                <div class="city-text-mobile">
+                    <h4>Boston</h4>
+                    <span class="city-pop">Population: ~654,000</span>
+                    <p>The state capital and New England's financial hub, famed for its rich history and world-class
+                        universities.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">2</div>
+                <div class="city-text-mobile">
+                    <h4>Worcester</h4>
+                    <span class="city-pop">Population: ~205,000</span>
+                    <p>Located in the heart of the state, serving as a center for healthcare, education, and
+                        biotechnology.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">3</div>
+                <div class="city-text-mobile">
+                    <h4>Springfield</h4>
+                    <span class="city-pop">Population: ~154,000</span>
+                    <p>The 'City of Firsts' and birthplace of basketball, a key industrial and cultural center.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">4</div>
+                <div class="city-text-mobile">
+                    <h4>Cambridge</h4>
+                    <span class="city-pop">Population: ~117,000</span>
+                    <p>Global center for education and innovation, home to Harvard University and MIT.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">5</div>
+                <div class="city-text-mobile">
+                    <h4>Lowell</h4>
+                    <span class="city-pop">Population: ~113,000</span>
+                    <p>The cradle of the American Industrial Revolution, known for its historic textile mills and
+                        canals.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANDMARKS & ECONOMY -->
+        <div class="section-card">
+            <h2 class="section-title">Key Landmarks & Economy</h2>
+            <div class="landmark-card-item">
+                <strong>Harvard University:</strong>
+                <p>Founded in 1636, it is the oldest institution of higher learning in the US.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Boston Seaport:</strong>
+                <p>A vibrant innovation district contributing significantly to the state's economic growth.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Biotech Hub:</strong>
+                <p>Cambridge leads the world in biotechnology and pharmaceutical research and development.</p>
+            </div>
+        </div>
+
+        <!-- DID YOU KNOW -->
+        <div class="section-card">
+            <h2 class="section-title">Did You Know?</h2>
+            <ul style="padding-left: 20px; color: var(--text-dark); font-size: 14px; line-height: 1.7; margin:0;">
+                <li style="margin-bottom: 12px;">The **first public school** in America, Boston Latin School, opened in
+                    1635.</li>
+                <li style="margin-bottom: 12px;">Basketball was **invented in Springfield** by James Naismith in 1891.
+                </li>
+                <li>Massachusetts was the **first state** to ratify the US Constitution.</li>
+            </ul>
+        </div>
+
+        <!-- MAP & NEIGHBORS -->
+        <div class="section-card">
+            <h2 class="section-title">Massachusetts Map</h2>
+            <div class="map-box">
+                <img src="Maps/Massachusetts.svg" alt="Massachusetts Map">
+                <div class="neighbor-tags">
+                    <a href="newhampshire.html" class="tag-mobile">New Hampshire</a>
+                    <a href="vermont.html" class="tag-mobile">Vermont</a>
+                    <a href="newyork.html" class="tag-mobile">New York</a>
+                    <a href="connecticut.html" class="tag-mobile">Connecticut</a>
+                    <a href="rhodeisland.html" class="tag-mobile">Rhode Island</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEAL & MOTTO -->
+        <div class="section-card">
+            <h2 class="section-title">Seal & Motto</h2>
+            <div class="seal-row">
+                <img src="Seals/Seal_of_Massachusetts.svg" alt="Seal of Massachusetts" class="seal-img-mobile">
+                <div class="motto-box">
+                    <div class="motto-text">"Ense petit placidam sub libertate quietem"</div>
+                    <div class="motto-origin">"By the sword we seek peace, but peace only under liberty."<br>Adopted
+                        1775.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Demographics</h2>
+            <div class="chart-wrap">
+                <canvas id="demoChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Population Growth</h2>
+            <div class="chart-wrap">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mobile-footer">
+        <p>Interactive US Map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>States</span>
+        </a>
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+            <span>Map</span>
+        </a>
+        <a href="regions.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+            <span>Regions</span>
+        </a>
+    </nav>
+
+    <script id="state-data">
+        window.stateConfig = {
+            timezone: "America/New_York",
+            weatherQuery: "Boston,MA,US",
+            charts: {
+                growthChart: {
+                    type: 'line',
+                    data: {
+                        labels: ['1980', '1990', '2000', '2010', '2020'],
+                        datasets: [{
+                            label: 'Population (Millions)',
+                            data: [5.73, 6.01, 6.34, 6.54, 7.03],
+                            borderColor: '#0277BD',
+                            backgroundColor: 'rgba(2, 119, 189, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                },
+                demoChart: {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['White', 'Hispanic', 'Black', 'Asian', 'Two+'],
+                        datasets: [{
+                            data: [67, 13, 7, 7, 5],
+                            backgroundColor: ['#90CAF9', '#BA68C8', '#FC8865', '#64B5F6', '#81C784'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { boxWidth: 10 } } }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="state-mobile-logic.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hawaii | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <link rel="stylesheet" href="state-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="state-hero">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </a>
+        <img src="Flags/Flag_of_Hawaii.svg" alt="Hawaii Flag" class="hero-flag">
+        <h1 class="hero-title">Hawaii</h1>
+        <span class="hero-subtitle">The Aloha State</span>
+    </header>
+
+    <!-- LIVE STATUS CARD -->
+    <div class="section-card status-card">
+        <div class="status-item">
+            <span class="status-label">Local Time</span>
+            <span class="status-value" id="time-display">--:-- --</span>
+        </div>
+        <div class="status-item" style="border-left: 1px solid #f0f0f0; padding-left: 20px;">
+            <span class="status-label">Honolulu</span>
+            <span class="status-value" id="weather-display">Loading...</span>
+        </div>
+    </div>
+
+    <main style="padding-top: 10px;">
+        <!-- QUICK STATS -->
+        <div class="section-card">
+            <h2 class="section-title">Quick Stats</h2>
+            <div class="stat-grid-mobile">
+                <div class="stat-item-mobile">
+                    <span class="label">Population</span>
+                    <span class="value">1.4M</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Rank</span>
+                    <span class="value">#40</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Joined</span>
+                    <span class="value">1959</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Area (mi²)</span>
+                    <span class="value">10.9k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section-card">
+            <h2 class="section-title">Overview</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Hawaii, the "Aloha State," is a mesmerizing tropical archipelago in the central Pacific. As the only
+                island
+                state in the U.S., it is famed for its breathtaking volcanic landscapes, vibrant indigenous culture, and
+                its status as a global leader in marine research and tourism.
+            </p>
+        </div>
+
+        <!-- HISTORICAL SIGNIFICANCE -->
+        <div class="section-card">
+            <h2 class="section-title">Historical Significance</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Hawaii officially joined the Union on August 21, 1959, as the 50th and final state. Its history spans
+                from a
+                sovereign kingdom to the site of the pivotal 1941 Pearl Harbor attack, marking its central role in
+                Pacific
+                history and American presence.
+            </p>
+        </div>
+
+        <!-- TOP CITIES -->
+        <div class="section-card">
+            <h2 class="section-title">Top Cities & Hubs</h2>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">1</div>
+                <div class="city-text-mobile">
+                    <h4>Honolulu</h4>
+                    <span class="city-pop">Population: ~350,000</span>
+                    <p>The state capital and a global crossroads, famous for Waikiki Beach and its status as a massive
+                        center for international finance.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">2</div>
+                <div class="city-text-mobile">
+                    <h4>East Honolulu</h4>
+                    <span class="city-pop">Population: ~50,500</span>
+                    <p>A prestigious residential area known for coastal views and access to landmarks like Diamond Head
+                        State Monument.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">3</div>
+                <div class="city-text-mobile">
+                    <h4>Pearl City</h4>
+                    <span class="city-pop">Population: ~45,000</span>
+                    <p>Located on the northern shores of Pearl Harbor, serves as a major residential hub for military
+                        families.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">4</div>
+                <div class="city-text-mobile">
+                    <h4>Hilo</h4>
+                    <span class="city-pop">Population: ~44,000</span>
+                    <p>The largest city on the "Big Island," renowned for lush rainforests and as the gateway to
+                        Volcanoes National Park.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">5</div>
+                <div class="city-text-mobile">
+                    <h4>Kailua-Kona</h4>
+                    <span class="city-pop">Population: ~23,000</span>
+                    <p>The vibrant center of the Big Island's west coast, world-famous for its incredible coffee
+                        plantations.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANDMARKS & ECONOMY -->
+        <div class="section-card">
+            <h2 class="section-title">Key Landmarks & Economy</h2>
+            <div class="landmark-card-item">
+                <strong>Pearl Harbor:</strong>
+                <p>A National Historic Landmark of immense global significance, home to the USS Arizona Memorial.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Hawaii Volcanoes:</strong>
+                <p>A National Park covering two of the world's most active volcanoes, Kilauea and Mauna Loa.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Tropical Agriculture:</strong>
+                <p>Hawaii is a leading global producer of macadamia nuts, Kona coffee, and exotic tropical flowers.</p>
+            </div>
+        </div>
+
+        <!-- DID YOU KNOW -->
+        <div class="section-card">
+            <h2 class="section-title">Did You Know?</h2>
+            <ul style="padding-left: 20px; color: var(--text-dark); font-size: 14px; line-height: 1.7; margin:0;">
+                <li style="margin-bottom: 12px;">Hawaii is the <strong>only U.S. state</strong> that grows coffee
+                    commercially in its rich volcanic soil.</li>
+                <li style="margin-bottom: 12px;">The state is home to the <strong>world's most active volcano</strong>,
+                    Kilauea, which has erupted almost continuously since 1983.</li>
+                <li>Hawaii does <strong>not observe Daylight Saving Time</strong> and has its own unique time zone.</li>
+            </ul>
+        </div>
+
+        <!-- MAP & NEIGHBORS -->
+        <div class="section-card">
+            <h2 class="section-title">Hawaii Map</h2>
+            <div class="map-box">
+                <img src="Maps/Hawaii.svg" alt="Hawaii Map">
+                <div class="neighbor-tags">
+                    <span class="tag-mobile">Pacific Ocean</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEAL & MOTTO -->
+        <div class="section-card">
+            <h2 class="section-title">Seal & Motto</h2>
+            <div class="seal-row">
+                <img src="Seals/Seal_of_Hawaii.svg" alt="Seal of Hawaii" class="seal-img-mobile">
+                <div class="motto-box">
+                    <div class="motto-text">"Ua Mau ke Ea o ka ?Aina i ka Pono"</div>
+                    <div class="motto-origin">Meaning: "The life of the land is perpetuated in
+                        righteousness."<br>Adopted 1959.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Demographics</h2>
+            <div class="chart-wrap">
+                <canvas id="demoChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Population Growth</h2>
+            <div class="chart-wrap">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mobile-footer">
+        <p>Interactive US Map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>States</span>
+        </a>
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+            <span>Map</span>
+        </a>
+        <a href="regions.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+            <span>Regions</span>
+        </a>
+    </nav>
+
+    <script id="state-data">
+        window.stateConfig = {
+            timezone: "Pacific/Honolulu",
+            weatherQuery: "Honolulu,HI,US",
+            charts: {
+                growthChart: {
+                    type: 'line',
+                    data: {
+                        labels: ['1980', '1990', '2000', '2010', '2020'],
+                        datasets: [{
+                            label: 'Population (Millions)',
+                            data: [0.96, 1.11, 1.21, 1.36, 1.46],
+                            borderColor: '#0288D1',
+                            backgroundColor: 'rgba(2, 136, 209, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                },
+                demoChart: {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Asian', 'White', 'Mixed', 'Hispanic', 'Other'],
+                        datasets: [{
+                            data: [37.2, 22.9, 25.3, 10.7, 3.9],
+                            backgroundColor: ['#64B5F6', '#FFD54F', '#81C784', '#BA68C8', '#FC8865'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { boxWidth: 10 } } }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="state-mobile-logic.js"></script>
+</body>
+
+</html>
