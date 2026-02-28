@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Louisiana | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <link rel="stylesheet" href="state-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- OVERLAY MENU -->
+    <div class="menu-overlay" id="mobileMenu">
+        <div class="close-menu" id="closeBtn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </div>
+        <nav class="menu-content">
+            <a href="index.html" class="menu-link">States</a>
+            <a href="regions.html" class="menu-link">Regions</a>
+            <hr style="width: 40px; border: 0; border-top: 2px solid rgba(255,255,255,0.1); margin: 10px auto;">
+            <a href="about.html" class="menu-link">About Us</a>
+            <a href="contact.html" class="menu-link">Get in Touch</a>
+            <a href="privacy_policy.html" class="menu-link">Privacy Policy</a>
+            <div style="margin-top: 40px; color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;">
+                Interactive US Map
+            </div>
+        </nav>
+    </div>
+
+    <!-- HAMBURGER TRIGGER -->
+    <div class="menu-trigger" id="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <header class="state-hero">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </a>
+        <img src="Flags/Flag_of_Louisiana.svg" alt="Louisiana Flag" class="hero-flag">
+        <h1 class="hero-title">Louisiana</h1>
+        <span class="hero-subtitle">The Pelican State</span>
+    </header>
+
+    <!-- LIVE STATUS CARD -->
+    <div class="section-card status-card">
+        <div class="status-item">
+            <span class="status-label">Local Time</span>
+            <span class="status-value" id="time-display">--:-- --</span>
+        </div>
+        <div class="status-item" style="border-left: 1px solid #f0f0f0; padding-left: 20px;">
+            <span class="status-label">Baton Rouge</span>
+            <span class="status-value" id="weather-display">Loading...</span>
+        </div>
+    </div>
+
+    <main style="padding-top: 10px;">
+        <!-- QUICK STATS -->
+        <div class="section-card">
+            <h2 class="section-title">Quick Stats</h2>
+            <div class="stat-grid-mobile">
+                <div class="stat-item-mobile">
+                    <span class="label">Population</span>
+                    <span class="value">4.6M</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Rank</span>
+                    <span class="value">#25</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Joined</span>
+                    <span class="value">1812</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Area (mi²)</span>
+                    <span class="value">52.4k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section-card">
+            <h2 class="section-title">Overview</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Louisiana, the "Pelican State," is a mesmerizing cultural melting pot where French, Spanish, African,
+                and Native American
+                heritages collide. Famed for its unique Creole soul and Cajun heart, it's a global leader in energy and
+                culture.
+            </p>
+        </div>
+
+        <!-- HISTORICAL SIGNIFICANCE -->
+        <div class="section-card">
+            <h2 class="section-title">Historical Significance</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Louisiana officially joined the Union on April 30, 1812, as the 18th state. As the crown jewel of the
+                1803
+                Louisiana Purchase, it served as the pivotal gateway to the Mississippi River.
+            </p>
+        </div>
+
+        <!-- TOP CITIES -->
+        <div class="section-card">
+            <h2 class="section-title">Top Cities & Hubs</h2>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">1</div>
+                <div class="city-text-mobile">
+                    <h4>New Orleans</h4>
+                    <span class="city-pop">Population: ~385,000</span>
+                    <p>The "Big Easy," famed for its historic French Quarter, jazz heritage, and its status as a vital
+                        international shipping port.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">2</div>
+                <div class="city-text-mobile">
+                    <h4>Baton Rouge</h4>
+                    <span class="city-pop">Population: ~225,000</span>
+                    <p>The state capital and major industrial hub hosting the nation's fourth-largest refinery and
+                        world-class research sectors.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">3</div>
+                <div class="city-text-mobile">
+                    <h4>Shreveport</h4>
+                    <span class="city-pop">Population: ~185,000</span>
+                    <p>A thriving commercial center in northwest Louisiana, famed for riverfront entertainment and
+                        historical charm.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">4</div>
+                <div class="city-text-mobile">
+                    <h4>Lafayette</h4>
+                    <span class="city-pop">Population: ~125,000</span>
+                    <p>The undisputed "Heart of Acadiana," global epicenter of Cajun culture and a fast-growing tech and
+                        medical sector.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">5</div>
+                <div class="city-text-mobile">
+                    <h4>Lake Charles</h4>
+                    <span class="city-pop">Population: ~80,000</span>
+                    <p>A significant industrial and tourism hub renowned for petrochemical facilities and gateway to
+                        lush coastal wetlands.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANDMARKS & ECONOMY -->
+        <div class="section-card">
+            <h2 class="section-title">Key Landmarks & Economy</h2>
+            <div class="landmark-card-item">
+                <strong>French Quarter:</strong>
+                <p>The oldest neighborhood in New Orleans, a famous National Historic Landmark defined by iron balconies
+                    and nightlife.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Jean Lafitte Preserve:</strong>
+                <p>A massive National Historical Park protecting the state's iconic bayous, swamps, and marshes.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Energy & Port Titan:</strong>
+                <p>Louisiana is a massive global producer of natural gas and home to the крупнейший tonnage port in the
+                    Western Hemisphere.</p>
+            </div>
+        </div>
+
+        <!-- DID YOU KNOW -->
+        <div class="section-card">
+            <h2 class="section-title">Did You Know?</h2>
+            <ul style="padding-left: 20px; color: var(--text-dark); font-size: 14px; line-height: 1.7; margin:0;">
+                <li style="margin-bottom: 12px;">Louisiana legal system is derived from the <strong>Napoleonic
+                        Code</strong> of France, unique in the US.</li>
+                <li style="margin-bottom: 12px;">Home to world's <strong>longest bridge over water</strong>, the Lake
+                    Pontchartrain Causeway (23.8 miles).</li>
+                <li>Instead of counties, Louisiana is divided into <strong>parishes</strong>, reflecting its French and
+                    Spanish colonial roots.</li>
+            </ul>
+        </div>
+
+        <!-- MAP & NEIGHBORS -->
+        <div class="section-card">
+            <h2 class="section-title">Louisiana Map</h2>
+            <div class="map-box">
+                <img src="Maps/Louisiana.svg" alt="Louisiana Map">
+                <div class="neighbor-tags">
+                    <a href="arkansas.html" class="tag-mobile">Arkansas</a>
+                    <a href="mississippi.html" class="tag-mobile">Mississippi</a>
+                    <a href="texas.html" class="tag-mobile">Texas</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEAL & MOTTO -->
+        <div class="section-card">
+            <h2 class="section-title">Seal & Motto</h2>
+            <div class="seal-row">
+                <img src="Seals/Seal_of_Louisiana.svg" alt="Seal of Louisiana" class="seal-img-mobile">
+                <div class="motto-box">
+                    <div class="motto-text">"Union, Justice, Confidence"</div>
+                    <div class="motto-origin">Reflects values of the early state constitution.<br>Adopted 1812.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Demographics</h2>
+            <div class="chart-wrap">
+                <canvas id="demoChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Population Growth</h2>
+            <div class="chart-wrap">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mobile-footer">
+        <p>Interactive US Map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>States</span>
+        </a>
+        <a href="map.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+            <span>Map</span>
+        </a>
+        <a href="regions.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+            <span>Regions</span>
+        </a>
+    </nav>
+
+    <script id="state-data">
+        window.stateConfig = {
+            timezone: "America/Chicago",
+            weatherQuery: "Baton Rouge,LA,US",
+            charts: {
+                growthChart: {
+                    type: 'line',
+                    data: {
+                        labels: ['1980', '1990', '2000', '2010', '2020'],
+                        datasets: [{
+                            label: 'Population (Millions)',
+                            data: [4.21, 4.22, 4.47, 4.53, 4.66],
+                            borderColor: '#8E24AA',
+                            backgroundColor: 'rgba(142, 36, 170, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                },
+                demoChart: {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['White', 'Black', 'Hispanic', 'Asian', 'Other'],
+                        datasets: [{
+                            data: [57.1, 31.2, 5.5, 1.8, 4.4],
+                            backgroundColor: ['#FFD54F', '#FC8865', '#BA68C8', '#64B5F6', '#81C784'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { boxWidth: 10 } } }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="state-mobile-logic.js"></script>
+</body>
+
+</html>

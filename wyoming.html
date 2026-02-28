@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wyoming | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <link rel="stylesheet" href="state-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- OVERLAY MENU -->
+    <div class="menu-overlay" id="mobileMenu">
+        <div class="close-menu" id="closeBtn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </div>
+        <nav class="menu-content">
+            <a href="index.html" class="menu-link">States</a>
+            <a href="regions.html" class="menu-link">Regions</a>
+            <hr style="width: 40px; border: 0; border-top: 2px solid rgba(255,255,255,0.1); margin: 10px auto;">
+            <a href="about.html" class="menu-link">About Us</a>
+            <a href="contact.html" class="menu-link">Get in Touch</a>
+            <a href="privacy_policy.html" class="menu-link">Privacy Policy</a>
+            <div style="margin-top: 40px; color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;">
+                Interactive US Map
+            </div>
+        </nav>
+    </div>
+
+    <!-- HAMBURGER TRIGGER -->
+    <div class="menu-trigger" id="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <header class="state-hero">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </a>
+        <img src="Flags/Flag_of_Wyoming.svg" alt="Wyoming Flag" class="hero-flag">
+        <h1 class="hero-title">Wyoming</h1>
+        <span class="hero-subtitle">The Equality State</span>
+    </header>
+
+    <!-- LIVE STATUS CARD -->
+    <div class="section-card status-card">
+        <div class="status-item">
+            <span class="status-label">Local Time</span>
+            <span class="status-value" id="time-display">--:-- --</span>
+        </div>
+        <div class="status-item" style="border-left: 1px solid #f0f0f0; padding-left: 20px;">
+            <span class="status-label">Cheyenne</span>
+            <span class="status-value" id="weather-display">Loading...</span>
+        </div>
+    </div>
+
+    <main style="padding-top: 10px;">
+        <!-- QUICK STATS -->
+        <div class="section-card">
+            <h2 class="section-title">Quick Stats</h2>
+            <div class="stat-grid-mobile">
+                <div class="stat-item-mobile">
+                    <span class="label">Population</span>
+                    <span class="value">580k</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Rank</span>
+                    <span class="value">#50</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Joined</span>
+                    <span class="value">1890</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Area (mi²)</span>
+                    <span class="value">97.8k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section-card">
+            <h2 class="section-title">Overview</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Wyoming is a vast and sparsely populated Western state, celebrated for its
+                extraordinary natural geography and rugged spirit. Home to the world's
+                first national park, it is a global leader in energy production and a
+                premier destination for high-altitude outdoor adventure.
+            </p>
+        </div>
+
+        <!-- HISTORICAL SIGNIFICANCE -->
+        <div class="section-card">
+            <h2 class="section-title">Historical Significance</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Wyoming entered the Union on July 10, 1890, as the 44th state. It famously
+                earned the moniker 'The Equality State' for leading the nation in civil
+                rights, becoming the first US territory and later the first state to
+                grant women the right to vote.
+            </p>
+        </div>
+
+        <!-- TOP CITIES -->
+        <div class="section-card">
+            <h2 class="section-title">Top Cities & Hubs</h2>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">1</div>
+                <div class="city-text-mobile">
+                    <h4>Cheyenne</h4>
+                    <span class="city-pop">Population: ~65,000</span>
+                    <p>The state capital and cultural anchor, known for its deep Western heritage and home to Cheyenne
+                        Frontier Days—the world's largest outdoor rodeo.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">2</div>
+                <div class="city-text-mobile">
+                    <h4>Casper</h4>
+                    <span class="city-pop">Population: ~58,000</span>
+                    <p>Known as 'The Oil City,' Casper is a primary engine for Wyoming's energy sector and the gateway
+                        to the world-renowned North Platte River.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">3</div>
+                <div class="city-text-mobile">
+                    <h4>Laramie</h4>
+                    <span class="city-pop">Population: ~32,000</span>
+                    <p>Home to the University of Wyoming, the state's sole public four-year institution, and a vibrant
+                        center for education in the high plains.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">4</div>
+                <div class="city-text-mobile">
+                    <h4>Gillette</h4>
+                    <span class="city-pop">Population: ~33,000</span>
+                    <p>The 'Energy Capital of the Nation,' producing a massive portion of American coal and serving as a
+                        critical economic hub for the surrounding region.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">5</div>
+                <div class="city-text-mobile">
+                    <h4>Rock Springs</h4>
+                    <span class="city-pop">Population: ~23,000</span>
+                    <p>A historic mining and cattle town, celebrated for its diverse multi-cultural heritage and its
+                        proximity to the beautiful Flaming Gorge.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANDMARKS & ECONOMY -->
+        <div class="section-card">
+            <h2 class="section-title">Key Landmarks & Economy</h2>
+            <div class="landmark-card-item">
+                <strong>Yellowstone National Park:</strong>
+                <p>The world's first national park, containing nearly half of the planet's active geysers, including the
+                    iconic and reliable Old Faithful.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Grand Teton:</strong>
+                <p>A global alpine destination for climbers and hikers, featuring the dramatic Teton Range and the
+                    pristine Snake River ecosystem.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Devils Tower:</strong>
+                <p>The United States' very first National Monument, established in 1906, an 867-foot monolith of igneous
+                    rock that holds sacred significance.</p>
+            </div>
+        </div>
+
+        <!-- DID YOU KNOW -->
+        <div class="section-card">
+            <h2 class="section-title">Did You Know?</h2>
+            <ul style="padding-left: 20px; color: var(--text-dark); font-size: 14px; line-height: 1.7; margin:0;">
+                <li style="margin-bottom: 12px;">Wyoming is the **least populous state** in the US, despite being the
+                    10th largest by total land area.</li>
+                <li style="margin-bottom: 12px;">The state was the **first to grant women the right to vote** in 1869,
+                    well before the 19th Amendment.</li>
+                <li>Wyoming is home to the **Buffalo Bill Center of the West** in Cody, often called the 'Smithsonian of
+                    the West.'</li>
+            </ul>
+        </div>
+
+        <!-- MAP & NEIGHBORS -->
+        <div class="section-card">
+            <h2 class="section-title">Wyoming Map</h2>
+            <div class="map-box">
+                <img src="Maps/Wyoming.svg" alt="Wyoming Map">
+                <div class="neighbor-tags">
+                    <a href="montana.html" class="tag-mobile">Montana</a>
+                    <a href="southdakota.html" class="tag-mobile">South Dakota</a>
+                    <a href="nebraska.html" class="tag-mobile">Nebraska</a>
+                    <a href="colorado.html" class="tag-mobile">Colorado</a>
+                    <a href="utah.html" class="tag-mobile">Utah</a>
+                    <a href="idaho.html" class="tag-mobile">Idaho</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEAL & MOTTO -->
+        <div class="section-card">
+            <h2 class="section-title">Seal & Motto</h2>
+            <div class="seal-row">
+                <img src="Seals/Seal_of_Wyoming.svg" alt="Seal of Wyoming" class="seal-img-mobile">
+                <div class="motto-box">
+                    <div class="motto-text">"Equal Rights"</div>
+                    <div class="motto-origin">Reflects the state's lead in women's suffrage.<br>Adopted 1869/1890.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Demographics</h2>
+            <div class="chart-wrap">
+                <canvas id="demoChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Population Growth</h2>
+            <div class="chart-wrap">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mobile-footer">
+        <p>Interactive us map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>States</span>
+        </a>
+        <a href="map.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+            <span>Map</span>
+        </a>
+        <a href="regions.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+            <span>Regions</span>
+        </a>
+    </nav>
+
+    <script id="state-data">
+        window.stateConfig = {
+            timezone: "America/Denver",
+            weatherQuery: "Cheyenne,WY,US",
+            charts: {
+                growthChart: {
+                    type: 'line',
+                    data: {
+                        labels: ['1980', '1990', '2000', '2010', '2020'],
+                        datasets: [{
+                            label: 'Population (Millions)',
+                            data: [0.47, 0.45, 0.49, 0.56, 0.58],
+                            borderColor: '#8D6E63',
+                            backgroundColor: 'rgba(141, 110, 99, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                },
+                demoChart: {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['White', 'Hispanic', 'Black', 'Asian', 'Other'],
+                        datasets: [{
+                            data: [82.1, 10.2, 0.9, 0.9, 5.9],
+                            backgroundColor: ['#FFD54F', '#BA68C8', '#FC8865', '#64B5F6', '#81C784'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { boxWidth: 10 } } }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="state-mobile-logic.js"></script>
+</body>
+
+</html>

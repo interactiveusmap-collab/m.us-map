@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nevada | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <link rel="stylesheet" href="state-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- OVERLAY MENU -->
+    <div class="menu-overlay" id="mobileMenu">
+        <div class="close-menu" id="closeBtn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </div>
+        <nav class="menu-content">
+            <a href="index.html" class="menu-link">States</a>
+            <a href="regions.html" class="menu-link">Regions</a>
+            <hr style="width: 40px; border: 0; border-top: 2px solid rgba(255,255,255,0.1); margin: 10px auto;">
+            <a href="about.html" class="menu-link">About Us</a>
+            <a href="contact.html" class="menu-link">Get in Touch</a>
+            <a href="privacy_policy.html" class="menu-link">Privacy Policy</a>
+            <div style="margin-top: 40px; color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;">
+                Interactive US Map
+            </div>
+        </nav>
+    </div>
+
+    <!-- HAMBURGER TRIGGER -->
+    <div class="menu-trigger" id="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <header class="state-hero">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </a>
+        <img src="Flags/Flag_of_Nevada.svg" alt="Nevada Flag" class="hero-flag">
+        <h1 class="hero-title">Nevada</h1>
+        <span class="hero-subtitle">The Silver State</span>
+    </header>
+
+    <!-- LIVE STATUS CARD -->
+    <div class="section-card status-card">
+        <div class="status-item">
+            <span class="status-label">Local Time</span>
+            <span class="status-value" id="time-display">--:-- --</span>
+        </div>
+        <div class="status-item" style="border-left: 1px solid #f0f0f0; padding-left: 20px;">
+            <span class="status-label">Carson City</span>
+            <span class="status-value" id="weather-display">Loading...</span>
+        </div>
+    </div>
+
+    <main style="padding-top: 10px;">
+        <!-- QUICK STATS -->
+        <div class="section-card">
+            <h2 class="section-title">Quick Stats</h2>
+            <div class="stat-grid-mobile">
+                <div class="stat-item-mobile">
+                    <span class="label">Population</span>
+                    <span class="value">3.2M</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Rank</span>
+                    <span class="value">#32</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Joined</span>
+                    <span class="value">1864</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Area (mi²)</span>
+                    <span class="value">110k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section-card">
+            <h2 class="section-title">Overview</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Nevada, the 'Silver State,' is a mesmerizing landscape of Mojave Desert beauty and neon-lit cities.
+                While it's known
+                globally as the entertainment capital of the world, it also holds a profound silver mining legacy and
+                vast mountain terrains.
+            </p>
+        </div>
+
+        <!-- HISTORICAL SIGNIFICANCE -->
+        <div class="section-card">
+            <h2 class="section-title">Historical Significance</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Joining the Union on October 31, 1864, during the height of the Civil War, Nevada was admitted as the
+                36th state.
+                Its 'Battle Born' motto reflects its strategic role in contributing silver to the national treasury.
+            </p>
+        </div>
+
+        <!-- TOP CITIES -->
+        <div class="section-card">
+            <h2 class="section-title">Top Cities & Hubs</h2>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">1</div>
+                <div class="city-text-mobile">
+                    <h4>Las Vegas</h4>
+                    <span class="city-pop">Population: ~650,000</span>
+                    <p>The global epicenter for tourism, gaming, and world-class entertainment, driving the state's
+                        massive service economy.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">2</div>
+                <div class="city-text-mobile">
+                    <h4>Henderson</h4>
+                    <span class="city-pop">Population: ~330,000</span>
+                    <p>A premier planned community and logistics hub, consistently ranked as one of the safest and most
+                        business-friendly cities in America.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">3</div>
+                <div class="city-text-mobile">
+                    <h4>North Las Vegas</h4>
+                    <span class="city-pop">Population: ~275,000</span>
+                    <p>A rapidly industrializing city that serves as a high-tech manufacturing and distribution center
+                        for the Southwest US.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">4</div>
+                <div class="city-text-mobile">
+                    <h4>Reno</h4>
+                    <span class="city-pop">Population: ~270,000</span>
+                    <p>'The Biggest Little City in the World,' now evolving from its gaming roots into a major
+                        technology and renewable energy hub.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">5</div>
+                <div class="city-text-mobile">
+                    <h4>Carson City</h4>
+                    <span class="city-pop">Population: ~58,000</span>
+                    <p>The state capital, nestled in the scenic Eagle Valley, serving as the political core and heritage
+                        center of Nevada.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANDMARKS & ECONOMY -->
+        <div class="section-card">
+            <h2 class="section-title">Key Landmarks & Economy</h2>
+            <div class="landmark-card-item">
+                <strong>Las Vegas Strip:</strong>
+                <p>An iconic 4.2-mile boulevard of neon lights and architectural wonders that defines global travel and
+                    spectacle.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Hoover Dam:</strong>
+                <p>A staggering engineering feat on the Colorado River that provides critical power and water to
+                    millions across the Southwest.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Lake Tahoe:</strong>
+                <p>A majestic alpine lake shared with California, offering crystal clear waters and world-class ski
+                    resorts in the Sierra Nevadas.</p>
+            </div>
+        </div>
+
+        <!-- DID YOU KNOW -->
+        <div class="section-card">
+            <h2 class="section-title">Did You Know?</h2>
+            <ul style="padding-left: 20px; color: var(--text-dark); font-size: 14px; line-height: 1.7; margin:0;">
+                <li style="margin-bottom: 12px;">Nevada contains **more mountain ranges** than any other state in the
+                    continental US.</li>
+                <li style="margin-bottom: 12px;">The state is home to **Area 51**, the mysterious and highly classified
+                    Air Force facility.</li>
+                <li>Nearly **85% of Nevada's land** is managed by the federal government, the highest percentage in the
+                    country.</li>
+            </ul>
+        </div>
+
+        <!-- MAP & NEIGHBORS -->
+        <div class="section-card">
+            <h2 class="section-title">Nevada Map</h2>
+            <div class="map-box">
+                <img src="Maps/Nevada.svg" alt="Nevada Map">
+                <div class="neighbor-tags">
+                    <a href="california.html" class="tag-mobile">California</a>
+                    <a href="oregon.html" class="tag-mobile">Oregon</a>
+                    <a href="idaho.html" class="tag-mobile">Idaho</a>
+                    <a href="utah.html" class="tag-mobile">Utah</a>
+                    <a href="arizona.html" class="tag-mobile">Arizona</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEAL & MOTTO -->
+        <div class="section-card">
+            <h2 class="section-title">Seal & Motto</h2>
+            <div class="seal-row">
+                <img src="Seals/Seal_of_Nevada.svg" alt="Seal of Nevada" class="seal-img-mobile">
+                <div class="motto-box">
+                    <div class="motto-text">"All For Our Country"</div>
+                    <div class="motto-origin">Adopted 1866.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Demographics</h2>
+            <div class="chart-wrap">
+                <canvas id="demoChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Population Growth</h2>
+            <div class="chart-wrap">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mobile-footer">
+        <p>Interactive us map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>States</span>
+        </a>
+        <a href="map.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+            <span>Map</span>
+        </a>
+        <a href="regions.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+            <span>Regions</span>
+        </a>
+    </nav>
+
+    <script id="state-data">
+        window.stateConfig = {
+            timezone: "America/Los_Angeles",
+            weatherQuery: "Carson City,NV,US",
+            charts: {
+                growthChart: {
+                    type: 'line',
+                    data: {
+                        labels: ['1980', '1990', '2000', '2010', '2020'],
+                        datasets: [{
+                            label: 'Population (Millions)',
+                            data: [0.80, 1.20, 2.00, 2.70, 3.10],
+                            borderColor: '#0277BD',
+                            backgroundColor: 'rgba(2, 119, 189, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                },
+                demoChart: {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['White', 'Hispanic', 'Black', 'Asian', 'Two+'],
+                        datasets: [{
+                            data: [45.9, 29.2, 10.3, 8.6, 6.0],
+                            backgroundColor: ['#90CAF9', '#BA68C8', '#FC8865', '#64B5F6', '#81C784'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { boxWidth: 10 } } }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="state-mobile-logic.js"></script>
+</body>
+
+</html>

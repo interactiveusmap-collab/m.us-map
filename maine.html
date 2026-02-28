@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Maine | Mobile Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mobile-style.css">
+    <link rel="stylesheet" href="state-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- OVERLAY MENU -->
+    <div class="menu-overlay" id="mobileMenu">
+        <div class="close-menu" id="closeBtn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </div>
+        <nav class="menu-content">
+            <a href="index.html" class="menu-link">States</a>
+            <a href="regions.html" class="menu-link">Regions</a>
+            <hr style="width: 40px; border: 0; border-top: 2px solid rgba(255,255,255,0.1); margin: 10px auto;">
+            <a href="about.html" class="menu-link">About Us</a>
+            <a href="contact.html" class="menu-link">Get in Touch</a>
+            <a href="privacy_policy.html" class="menu-link">Privacy Policy</a>
+            <div style="margin-top: 40px; color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;">
+                Interactive US Map
+            </div>
+        </nav>
+    </div>
+
+    <!-- HAMBURGER TRIGGER -->
+    <div class="menu-trigger" id="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <header class="state-hero">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </a>
+        <img src="Flags/Flag_of_Maine.svg" alt="Maine Flag" class="hero-flag">
+        <h1 class="hero-title">Maine</h1>
+        <span class="hero-subtitle">The Pine Tree State</span>
+    </header>
+
+    <!-- LIVE STATUS CARD -->
+    <div class="section-card status-card">
+        <div class="status-item">
+            <span class="status-label">Local Time</span>
+            <span class="status-value" id="time-display">--:-- --</span>
+        </div>
+        <div class="status-item" style="border-left: 1px solid #f0f0f0; padding-left: 20px;">
+            <span class="status-label">Augusta</span>
+            <span class="status-value" id="weather-display">Loading...</span>
+        </div>
+    </div>
+
+    <main style="padding-top: 10px;">
+        <!-- QUICK STATS -->
+        <div class="section-card">
+            <h2 class="section-title">Quick Stats</h2>
+            <div class="stat-grid-mobile">
+                <div class="stat-item-mobile">
+                    <span class="label">Population</span>
+                    <span class="value">1.4M</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Rank</span>
+                    <span class="value">#42</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Joined</span>
+                    <span class="value">1820</span>
+                </div>
+                <div class="stat-item-mobile">
+                    <span class="label">Area (mi²)</span>
+                    <span class="value">35.4k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section-card">
+            <h2 class="section-title">Overview</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Maine, the 'Pine Tree State,' boasts a rugged coastline punctuated by iconic lighthouses and expansive
+                sandy beaches.
+                Renowned for lobster and timber, it offers breathtaking beauty alongside thriving maritime industries.
+            </p>
+        </div>
+
+        <!-- HISTORICAL SIGNIFICANCE -->
+        <div class="section-card">
+            <h2 class="section-title">Historical Significance</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark); margin: 0;">
+                Maine officially joined the United States on March 15, 1820, as the 23rd state. Its admittance expanded
+                the country’s territory and solidified New England's presence following the War of 1812.
+            </p>
+        </div>
+
+        <!-- TOP CITIES -->
+        <div class="section-card">
+            <h2 class="section-title">Top Cities & Hubs</h2>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">1</div>
+                <div class="city-text-mobile">
+                    <h4>Portland</h4>
+                    <span class="city-pop">Population: ~68,000</span>
+                    <p>The largest city, known for its historic Old Port, fishing wharves, and vibrant restaurant scene.
+                    </p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">2</div>
+                <div class="city-text-mobile">
+                    <h4>Lewiston</h4>
+                    <span class="city-pop">Population: ~37,000</span>
+                    <p>Located on the banks of the Androscoggin River, known for its rich Franco-American heritage.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">3</div>
+                <div class="city-text-mobile">
+                    <h4>Bangor</h4>
+                    <span class="city-pop">Population: ~32,000</span>
+                    <p>The Queen City of the East, a major commercial and cultural center for northern Maine.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">4</div>
+                <div class="city-text-mobile">
+                    <h4>South Portland</h4>
+                    <span class="city-pop">Population: ~27,000</span>
+                    <p>Located on Portland Harbor, known for its working waterfront and large retail center.</p>
+                </div>
+            </div>
+            <div class="city-item-mobile">
+                <div class="city-rank-mobile">5</div>
+                <div class="city-text-mobile">
+                    <h4>Auburn</h4>
+                    <span class="city-pop">Population: ~24,000</span>
+                    <p>Twin city to Lewiston, together forming the second-largest metropolitan area in the state.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANDMARKS & ECONOMY -->
+        <div class="section-card">
+            <h2 class="section-title">Key Landmarks & Economy</h2>
+            <div class="landmark-card-item">
+                <strong>Acadia National Park:</strong>
+                <p>Located on Mount Desert Island, this park offers stunning granite peaks and dramatic ocean views.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Portland Head Light:</strong>
+                <p>Perched dramatically on Cape Elizabeth, this iconic lighthouse offers picturesque views and
+                    historical depth.</p>
+            </div>
+            <div class="landmark-card-item">
+                <strong>Maritime Excellence:</strong>
+                <p>Maine leads in lobster production and timber, maintaining a legacy of maritime and forestry
+                    excellence.</p>
+            </div>
+        </div>
+
+        <!-- DID YOU KNOW -->
+        <div class="section-card">
+            <h2 class="section-title">Did You Know?</h2>
+            <ul style="padding-left: 20px; color: var(--text-dark); font-size: 14px; line-height: 1.7; margin:0;">
+                <li style="margin-bottom: 12px;">Maine name is the only one derived from a <strong>Latin
+                        adjective</strong> for 'a good place.'</li>
+                <li style="margin-bottom: 12px;">The iconic <strong>lobster roll</strong> originated in Maine,
+                    showcasing the state's rich culinary bounty.</li>
+                <li>Maine has more <strong>coastline</strong> than all other US states combined, providing a spectacular
+                    geography.</li>
+            </ul>
+        </div>
+
+        <!-- MAP & NEIGHBORS -->
+        <div class="section-card">
+            <h2 class="section-title">Maine Map</h2>
+            <div class="map-box">
+                <img src="Maps/Maine.svg" alt="Maine Map">
+                <div class="neighbor-tags">
+                    <a href="newhampshire.html" class="tag-mobile">New Hampshire</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEAL & MOTTO -->
+        <div class="section-card">
+            <h2 class="section-title">Seal & Motto</h2>
+            <div class="seal-row">
+                <img src="Seals/Seal_of_Maine.svg" alt="Seal of Maine" class="seal-img-mobile">
+                <div class="motto-box">
+                    <div class="motto-text">"Dirigo"</div>
+                    <div class="motto-origin">Meaning: "I lead."<br>Adopted 1820.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Demographics</h2>
+            <div class="chart-wrap">
+                <canvas id="demoChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section-card animate-on-scroll">
+            <h2 class="section-title">Population Growth</h2>
+            <div class="chart-wrap">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mobile-footer">
+        <p>Interactive US Map | <a href="privacy_policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>States</span>
+        </a>
+        <a href="map.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+            <span>Map</span>
+        </a>
+        <a href="regions.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+            <span>Regions</span>
+        </a>
+    </nav>
+
+    <script id="state-data">
+        window.stateConfig = {
+            timezone: "America/New_York",
+            weatherQuery: "Augusta,ME,US",
+            charts: {
+                growthChart: {
+                    type: 'line',
+                    data: {
+                        labels: ['1980', '1990', '2000', '2010', '2020'],
+                        datasets: [{
+                            label: 'Population (Millions)',
+                            data: [1.12, 1.23, 1.27, 1.33, 1.36],
+                            borderColor: '#2E7D32',
+                            backgroundColor: 'rgba(46, 125, 50, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                },
+                demoChart: {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['White', 'Hispanic', 'Black', 'Asian', 'Other'],
+                        datasets: [{
+                            data: [93.0, 2.0, 2.0, 1.0, 2.0],
+                            backgroundColor: ['#81C784', '#BA68C8', '#FC8865', '#64B5F6', '#A1887F'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { boxWidth: 10 } } }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="state-mobile-logic.js"></script>
+</body>
+
+</html>
